@@ -9,7 +9,6 @@
     <version>1.0.0</version>
 
 
-
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -20,5 +19,12 @@
 
     </dependencies>
 
+    <properties>
+        <maven.compiler.source>1.6</maven.compiler.source>
+        <maven.compiler.target>1.6</maven.compiler.target>
+    </properties>
+
+
 
 </project>
+
