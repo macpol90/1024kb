@@ -29,6 +29,8 @@ public class Main {
         numbers.remove(1);
         numbers.size();
 
+        System.out.println("check this out!");
+
 
     }
 }
