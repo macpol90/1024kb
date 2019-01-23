@@ -30,6 +30,7 @@ public class Main {
         numbers.size();
 
         System.out.println("check this out!");
+        System.out.println();
 
 
     }
