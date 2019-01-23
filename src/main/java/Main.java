@@ -30,6 +30,7 @@ public class Main {
         numbers.size();
 
         System.out.println("Miau");
+        System.out.println("Miau");
 
     }
 }
