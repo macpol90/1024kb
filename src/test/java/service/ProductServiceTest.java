@@ -9,6 +9,8 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.List;
 
+import static org.junit.Assert.*;
+
 /**
  * Created by Maciej Polański on 18.01.2019.
  */
@@ -43,16 +45,29 @@ public class ProductServiceTest {
         products.add(new Cloth(3l, "Spodnie", 44.f, 0.f, "White", 3, "S", "COTTON"));
         List<Product> listFromTestClass = productService.getAllProducts();
 
-        Assert.assertNotEquals(products, listFromTestClass);
+        Assert.assertNotSame(products, listFromTestClass);
     }
 
 
+    @Test
+    public void testGetCountProduct() {
+        List<Product> products = new ArrayList<Product>();
+        products.add(new Boots(1l, "Boots", 35.0f, 0.3f, "Black", 4, 38, true));
+        products.add(new Boots(2l, "Boots", 35.0f, 0.3f, "Black", 4, 38, true));
+        products.add(new Boots(3l, "Boots", 35.0f, 0.3f, "Black", 4, 38, true));
+
+        ProductServiceImpl productService = new ProductServiceImpl(products);
+        final int result = productService.getCountProducts();
+
+        Assert.assertEquals(3,result);
+
+
 
 
     }
-
-
-
 
 
 }
+
+
+

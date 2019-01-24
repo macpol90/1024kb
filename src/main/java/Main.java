@@ -28,9 +28,6 @@ public class Main {
 
         numbers.remove(1);
         numbers.size();
-
-        System.out.println("Miau");
-        System.out.println("Miau");
-
+        
     }
 }
