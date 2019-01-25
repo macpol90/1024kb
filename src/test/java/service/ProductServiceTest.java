@@ -50,7 +50,7 @@ public class ProductServiceTest {
 
 
     @Test
-    public void testGetCountProduct() {
+    public void testGetCountProductPositive() {
         List<Product> products = new ArrayList<Product>();
         products.add(new Boots(1l, "Boots", 35.0f, 0.3f, "Black", 4, 38, true));
         products.add(new Boots(2l, "Boots", 35.0f, 0.3f, "Black", 4, 38, true));
@@ -61,8 +61,28 @@ public class ProductServiceTest {
 
         Assert.assertEquals(3,result);
 
+    }
 
 
+    @Test
+    public void testGetCountProductsWithoutProducts(){
+        ProductServiceImpl productService = new ProductServiceImpl();
+
+        final int result = productService.getCountProducts();
+
+        Assert.assertEquals(result,0);
+    }
+
+    @Test
+    public void testGetProductByNameWhenExist(){
+        List<Product> products = new ArrayList<Product>();
+        Product cloth = new Boots(1l, "Reebok", 35.0f, 0.3f, "White", 4, 38, true);
+        products.add(new Boots(2l, "Nike", 35.0f, 0.3f, "Black", 4, 38, false));
+
+        ProductServiceImpl productService = new ProductServiceImpl(products);
+        final Product product = productService.getProductByProductName("Reebok");
+
+        Assert.assertEquals(cloth,product);
 
     }
 
