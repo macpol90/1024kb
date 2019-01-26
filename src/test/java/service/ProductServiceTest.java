@@ -77,6 +77,7 @@ public class ProductServiceTest {
     public void testGetProductByNameWhenExist(){
         List<Product> products = new ArrayList<Product>();
         Product cloth = new Boots(1l, "Reebok", 35.0f, 0.3f, "White", 4, 38, true);
+        products.add(cloth);
         products.add(new Boots(2l, "Nike", 35.0f, 0.3f, "Black", 4, 38, false));
 
         ProductServiceImpl productService = new ProductServiceImpl(products);
